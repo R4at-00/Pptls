@@ -5,7 +5,7 @@ function startVariables() {
     if (getVolume() === null) {
         localStorage.setItem("volume", "50");
     }
-    if(getLocal()){
+    if (getLocal()) {
         if (getCoins() === null) {
             localStorage.setItem("coins", "0");
         }
@@ -18,7 +18,7 @@ function startVariables() {
         if (getEmblems() === null) {
             localStorage.setItem("emblems", "");
         }
-    }else{
+    } else {
         if (getCoins() === null) {
             sessionStorage.setItem("coins", "0");
         }
@@ -90,7 +90,7 @@ function getCoins() {
     if (getLocal()) {
         return localStorage.getItem("coins") === null ? null : Number(localStorage.getItem("coins"));
     } else {
-        return sessionStorage.getItem("coins")  === null ? null : Number(sessionStorage.getItem("coins"));
+        return sessionStorage.getItem("coins") === null ? null : Number(sessionStorage.getItem("coins"));
     }
 }
 function setCoins(value) {
@@ -108,7 +108,7 @@ function getWins() {
     if (getLocal()) {
         return localStorage.getItem("wins") === null ? null : Number(localStorage.getItem("wins"));
     } else {
-        return sessionStorage.getItem("wins")  === null ? null : Number(sessionStorage.getItem("wins"));
+        return sessionStorage.getItem("wins") === null ? null : Number(sessionStorage.getItem("wins"));
     }
 }
 function addWin() {
@@ -121,10 +121,10 @@ function addWin() {
 
 function getDefeats() {
     if (getLocal()) {
-        return localStorage.getItem("defeats")  === null ? null : Number(localStorage.getItem("defeats"));
+        return localStorage.getItem("defeats") === null ? null : Number(localStorage.getItem("defeats"));
     } else {
-        return sessionStorage.getItem("defeats")  === null ? null : Number(sessionStorage.getItem("defeats"));
-    } 
+        return sessionStorage.getItem("defeats") === null ? null : Number(sessionStorage.getItem("defeats"));
+    }
 }
 function addDefeat() {
     if (getLocal()) {
