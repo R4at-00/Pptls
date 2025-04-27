@@ -1,0 +1,40 @@
+header{
+    justify-content: left;
+}
+
+body{
+    background-image: url(../img/dot.png);
+    background-size: 5px;
+}
+
+main{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--smooth-black);
+    margin: 0 auto;
+    padding: 50px;
+    text-align: center;
+    border-radius: 9px;
+
+    gap: 20px;
+    & h1{
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+    }
+}
+
+#vL{
+    width: 250px;
+}
+
+
+@media (max-width: 1200px) {
+    
+}
+
+@media (max-width: 600px) {
+    #vL{
+        width: 100%;
+    }
+}

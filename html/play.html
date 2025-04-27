@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/logo_pptls-removebg-preview.ico" type="image/x-icon">
+    <title>Jugar</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/play.css">
+    <script defer src="../js/local.js"></script>
+    <script defer src="../js/audio.js"></script>
+    <script defer src="../js/play.js"></script>
+
+    <audio id="mainTheme" loop>
+        <source src="../sound/pptls-edm.wav">
+        <source src="../sound/pptls-edm.mp3">
+    </audio>
+    <audio id="BUY">
+        <source src="../sound/BUY.mp3">
+    </audio>
+    <audio id="WIN">
+        <source src="../sound/WIN.mp3">
+    </audio>
+    <audio id="DEFEAT">
+        <source src="../sound/DEFEAT.mp3">
+    </audio>
+</head>
+
+<body>
+    <header>
+        <a href="mainMenu.html">Atrás</a>
+    </header>
+    <main>
+        <div class="playerContainer" id="p1">
+            <div class="previewSelection">
+                <!-- <img src="../img/rock.PNG" class="zoom-img"> -->
+            </div>
+            <div class="handContainer">
+                <div class="hand imgContainer" id="p1rock">
+                    <img src="../img/rock.PNG" alt="rock">
+                </div>
+                <div class="hand imgContainer" id="p1paper">
+                    <img src="../img/paper.PNG" alt="paper">
+                </div>
+                <div class="hand imgContainer" id="p1scissors">
+                    <img src="../img/scissors.PNG" alt="scissors">
+                </div>
+                <div class="hand imgContainer" id="p1lizzard">
+                    <img src="../img/lizzard.PNG" alt="lizzard">
+                </div>
+                <div class="hand imgContainer" id="p1spock">
+                    <img src="../img/spock.PNG" alt="spock">
+                </div>
+            </div>
+        </div>
+        <div class="inner-column">
+            <p id="result"></p>
+            <p id="loot"></p>
+            <div class="btnContainer">
+                <a class="btn" id="ready">
+                    <p>Listo</p>
+                </a>
+            </div>
+        </div>
+        <div class="playerContainer" id="p2">
+            <div class="p2BehaviorSelection">
+                <a class="btn-p2" id="CPU">
+                    <p>CPU</p>
+                </a>
+                <div class="br-line"></div>
+                <a class="btn-p2" id="btn-p2">
+                    <p>2º Jugador</p>
+                </a>
+            </div>
+            <div class="previewSelection">
+                <!-- <img src="" class="zoom-img"> -->
+            </div>
+            <div class="handContainer">
+                <div class="hand imgContainer" id="p2rock">
+                    <img src="../img/rock.PNG" alt="rock">
+                </div>
+                <div class="hand imgContainer" id="p2paper">
+                    <img src="../img/paper.PNG" alt="paper">
+                </div>
+                <div class="hand imgContainer" id="p2scissors">
+                    <img src="../img/scissors.PNG" alt="scissors">
+                </div>
+                <div class="hand imgContainer" id="p2lizzard">
+                    <img src="../img/lizzard.PNG" alt="lizzard">
+                </div>
+                <div class="hand imgContainer" id="p2spock">
+                    <img src="../img/spock.PNG" alt="spock">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Diego Padilla &copy; 2025</p>
+    </footer>
+</body>
+
+</html>

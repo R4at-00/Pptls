@@ -1,0 +1,13 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <!-- Se agrupa y centra la figura -->
+    <g transform="translate(50,50)">
+      <!-- Rectángulo rotado 45° -->
+      <g transform="rotate(45)">
+        <rect x="-5" y="-40" width="10" height="80" fill="white" />
+      </g>
+      <!-- Rectángulo rotado -45° -->
+      <g transform="rotate(-45)">
+        <rect x="-5" y="-40" width="10" height="80" fill="white" />
+      </g>
+    </g>
+  </svg>

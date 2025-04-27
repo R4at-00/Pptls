@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+:root{
+    font-family: consolas;
+    color: var(--smooth-black);
+    font-size: 18px;
+    --light-gray: #d6d6d6;
+    --dark-turquoise: #6ea59c;
+    --turquoise: #9de7db;
+    --light-turquoise: #cafff6;
+    --smooth-black: rgb(61, 61, 61);
+    --transparent-smooth-black: rgba(61, 61, 61, 0.3);
+    --dark-yellow: #d1b745;
+    --yellow: #fddf59;
+    --light-yellow: #fcefb3;
+    --light-yellow1:rgb(255, 248, 216);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+/*Código desacoplado*/
+.btnContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: fit-content;
+}
+
+.btn{
+    padding: 15px 20px;
+    border-radius: 7px;
+    font-size: 1.3rem;
+    width: fit-content;
+    background-color: var(--light-yellow);
+    border: 1px solid var(--dark-yellow);
+    & p{
+        transition: filter 0.1s;
+    }
+}
+.btn:hover, .hand:hover, .btn-p2:hover{
+    background-image: url(../img/dot.png);
+    background-size: 3px;
+    cursor: pointer;
+    & p{
+        filter: drop-shadow(0 0 0.5px var(--smooth-black));
+    }
+}
+
+.br-line{
+    background-color: var(--smooth-black);
+    width: 1px;
+}
+
+.imgContainer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: var(--light-yellow);
+    border: 1px solid var(--dark-yellow);
+    border-radius: 50%;
+    overflow: hidden;
+    & img{
+        height: 70%;
+        width: 70%;
+        position: absolute;
+        object-fit: contain;
+    }
+}
+
+.zoom-img{
+    transition: transform 1s, filter 2s;
+}
+.zoom-img:hover{
+    transform: scale(1.1) rotateY(360deg);
+    filter: drop-shadow(0 0 5px var(--smooth-black));
+}
+
+.emblemContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.emblem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & div{
+        padding: 35px;
+        background-color: var(--light-yellow);
+        border-radius: 100%;
+        border: 1px solid var(--smooth-black);
+    }
+    & img{
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 1200px) {
+    
+}
+
+@media (max-width: 600px) {
+    :root{
+        font-size: 12px;
+    }
+}
+
+@keyframes imageOpacity {
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}

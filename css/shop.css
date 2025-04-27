@@ -1,0 +1,24 @@
+header{justify-content: left;}
+
+.emblemContainer{
+    gap: 50px;
+    margin: 20px 0;
+}
+
+.emblem{
+    gap:15px;
+    & img{
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 1200px) {
+    
+}
+
+@media (max-width: 600px) {
+    .emblem div{
+        padding: 20px;
+    }
+}

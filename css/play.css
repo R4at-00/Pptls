@@ -1,0 +1,155 @@
+header{
+    justify-content: left;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    width: 100%;
+    padding: 20px;
+}
+
+.playerContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    width: fit-content;
+    margin: 0 auto;
+}
+.previewSelection{
+    margin: 0 auto 0px auto;
+    width:100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-yellow);
+    border-radius: 50%;
+    border: 1px solid var(--dark-yellow);
+    & img{
+        object-fit: contain;
+        width: 70%;
+        height: 70%;
+    }
+}
+
+/* Así es como se pondrá para cuando elija el segundo jugador */
+/* #p1 .previewSelection{
+    background-color: var(--light-gray);
+    background-image: url(../img/dot.png);
+    background-size: 5px;
+} */
+/* El handContainer también desaparece */
+
+.handContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.inner-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    height: 80%;
+    align-self: center;
+    gap: 20px;
+    & #result, #loot{
+        width: fit-content;
+        text-align: center;
+        display: inline;
+        height: fit-content;
+    }
+    & .btnContainer{
+        margin: 0 auto;
+    }
+}
+
+.imgContainer{
+    width: 92px;
+    height: 92px;
+    background-color: var(--light-yellow1);
+}
+
+.hand {
+    transition: filter .2s;
+    & img{
+        filter: grayscale(1);
+        transition: filter .4s;
+    }
+}
+.blocked{
+    background-color: var(--light-gray);
+    background-image: url(../img/dot.png);
+    border: 1px solid var(--smooth-black);
+    background-size: 5px;
+}
+
+.hand:hover{
+    filter: drop-shadow(0 3px 2px var(--transparent-smooth-black));
+    & img{
+        filter: grayscale(0);
+    }
+}
+
+.p2BehaviorSelection{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+    & .btn-p2{
+        width: 50%;
+        text-align: center;
+        padding: 8px 0px;
+    }
+    & .btn-p2:hover{
+        background-color: var(--light-yellow1);
+        cursor: pointer;
+        filter: drop-shadow(0 2px 1px var(--smooth-black));
+    }
+    & #CPU{
+
+        border-top: 1px solid var(--dark-yellow);
+        border-left: 1px solid var(--dark-yellow);
+        border-bottom: 1px solid var(--dark-yellow);
+
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        
+    }
+    & #btn-p2{
+        border-top: 1px solid var(--dark-yellow);
+        border-right: 1px solid var(--dark-yellow);
+        border-bottom: 1px solid var(--dark-yellow);
+
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        
+    }
+}
+
+@media (max-width: 1200px) {
+    main{
+        flex-direction: column;
+    }
+    .inner-column{
+        flex-direction: row-reverse;
+        & #result, #loot{
+            align-self: center;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .imgContainer{
+        width: 42px;
+        height: 42px;
+    }
+    .previewSelection{
+        height: 250px;
+    }
+}
