@@ -3,7 +3,7 @@ function startVariables() {
         localStorage.setItem("local", "false");
     }
     if (getVolume() === null) {
-        localStorage.setItem("volume", "0.5");
+        localStorage.setItem("volume", "50");
     }
     if(getLocal()){
         if (getCoins() === null) {
@@ -32,14 +32,6 @@ function startVariables() {
             sessionStorage.setItem("emblems", "");
         }
     }
-    
-    if (document.querySelector('#lS') != undefined) {
-        if (document.querySelector('#lS').checked) {
-            swapToLocal();
-        } else {
-            swapToSession();
-        }
-    }
 }
 
 function swapToLocal() {
@@ -66,9 +58,9 @@ function swapToSession() {
 
 function getEmblems() {
     if (getLocal()) {
-        return localStorage.getItem("emblems");
+        return localStorage.getItem("emblems") === null ? null : localStorage.getItem("emblems");
     } else {
-        return sessionStorage.getItem("emblems");
+        return sessionStorage.getItem("emblems") === null ? null : sessionStorage.getItem("emblems");
     }
 }
 function addEmblem(value) {
@@ -81,14 +73,14 @@ function addEmblem(value) {
 }
 
 function getVolume() {
-    return Number(localStorage.getItem("volume"));
+    return localStorage.getItem("volume") === null ? null : Number(localStorage.getItem("volume"));
 }
 function setVolume(value) {
     localStorage.setItem("volume", value.toString());
 }
 
 function getLocal() {
-    return localStorage.getItem("local") === 'true';
+    return localStorage.getItem("local") === null ? null : localStorage.getItem("local") === 'true';
 }
 function setLocal(value) {
     localStorage.setItem("local", value.toString());
@@ -96,9 +88,9 @@ function setLocal(value) {
 
 function getCoins() {
     if (getLocal()) {
-        return Number(localStorage.getItem("coins"));
+        return localStorage.getItem("coins") === null ? null : Number(localStorage.getItem("coins"));
     } else {
-        return Number(sessionStorage.getItem("coins"));
+        return sessionStorage.getItem("coins")  === null ? null : Number(sessionStorage.getItem("coins"));
     }
 }
 function setCoins(value) {
@@ -114,9 +106,9 @@ function setCoins(value) {
 
 function getWins() {
     if (getLocal()) {
-        return Number(localStorage.getItem("wins"));
+        return localStorage.getItem("wins") === null ? null : Number(localStorage.getItem("wins"));
     } else {
-        return Number(sessionStorage.getItem("wins"));
+        return sessionStorage.getItem("wins")  === null ? null : Number(sessionStorage.getItem("wins"));
     }
 }
 function addWin() {
@@ -129,10 +121,10 @@ function addWin() {
 
 function getDefeats() {
     if (getLocal()) {
-        return Number(localStorage.getItem("defeats"));
+        return localStorage.getItem("defeats")  === null ? null : Number(localStorage.getItem("defeats"));
     } else {
-        return Number(sessionStorage.getItem("defeats"));
-    }
+        return sessionStorage.getItem("defeats")  === null ? null : Number(sessionStorage.getItem("defeats"));
+    } 
 }
 function addDefeat() {
     if (getLocal()) {

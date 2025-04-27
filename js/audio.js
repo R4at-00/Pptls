@@ -6,7 +6,7 @@ const $defeatSound = document.getElementById('DEFEAT');
 
 function addEvent_volume(){
     $activeAudioSources.forEach(item =>{
-        item.volume = getVolume();
+        item.volume = getVolume()/100;
     });
 }
 

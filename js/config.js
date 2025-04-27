@@ -3,14 +3,14 @@ const $localStorageCheck = document.getElementById('lS');
 
 function addEvent_volumeSlider(){
     $volumeSlider.addEventListener('input', function(){
-        setVolume($volumeSlider.value/100);
+        setVolume($volumeSlider.value);
         addEvent_volume();
     });
 
 }
 
 function retrieve_volumeLevel(){
-    $volumeSlider.value = getVolume()*100;
+    $volumeSlider.value = getVolume();
 }
 
 function retrieve_localStorageCheckState(){
@@ -27,10 +27,10 @@ function addEvent_localStorageCheck(){
         if(deleteWarning){
             if($localStorageCheck.checked){
                 setLocal(true);
-                startVariables();
+                swapToLocal();
             }else{
                 setLocal(false);
-                startVariables();
+                swapToSession();
             }
         }else{
             $localStorageCheck.checked = !$localStorageCheck.checked;
@@ -41,7 +41,7 @@ function addEvent_localStorageCheck(){
 }
 
 playSound($mainTheme);
+retrieve_volumeLevel();
+retrieve_localStorageCheckState();
 addEvent_localStorageCheck();
 addEvent_volumeSlider()
-retrieve_localStorageCheckState();
-retrieve_volumeLevel();
