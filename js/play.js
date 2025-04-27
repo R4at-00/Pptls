@@ -215,17 +215,20 @@ function finalResult() {
         $resultTxt.innerText = `Gana jugador 1: ${translate(p1Selection)} gana contra ${translate(p2Selection)}`;
         coins = random(1, 10);
         $lootTxt.innerText = `+${coins} Monedas`;
+        playSound($winSound);
         setCoins(getCoins() + coins);
         addWin();
     } else if (result() == 'p2') {
         $resultTxt.innerText = `Gana jugador 2: ${translate(p2Selection)} gana contra ${translate(p1Selection)}`;
         coins = random(1, 10);
         $lootTxt.innerText = `-${coins} Monedas`;
+        playSound($defeatSound);
         setCoins(getCoins() - coins);
         addDefeat();
     } else {
         $resultTxt.innerText = '¡Empate!';
         $lootTxt.innerText = '';
+        playSound($defeatSound);
     }
 }
 
